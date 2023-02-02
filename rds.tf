@@ -1,4 +1,4 @@
-
+/*
 resource "aws_db_instance" "db" {
    identifier = "mysql-db"
    engine = "mysql"
@@ -14,3 +14,21 @@ resource "aws_db_instance" "db" {
    #vpc_security_group_ids      = [ aws_security_group.demosg.id ]
 
 }
+*/
+#postgres sql creation
+resource "aws_db_instance" "suneel" {
+  identifier             = "suneel"
+  name                   = "suneel"
+  instance_class         = "db.t2.micro"
+   storage_typev         =  20
+  allocated_storage      = 20
+  engine                 = "postgres"
+  engine_version         = "12.5"
+  skip_final_snapshot    = true
+  publicly_accessible    = true
+  vpc_security_group_ids = [aws_security_group.demosg.id]
+  username               = "postgres"
+  password               = "random_string.suneel-db-password.result"
+}
+
+
